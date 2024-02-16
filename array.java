@@ -100,9 +100,25 @@ public class array {
             for (int i = 0; i < length; i++) {
                 items[i] = old[i];
             }
-            old=null;
+            old = null;
         }
 
     }
 
+    void merge(array other) {
+        int newSize = size + other.size;
+        size = newSize;
+        int []old =items;
+        items =new int[size];
+        int i;
+        for(i=0; i<length; i++){
+            items[i] = old[i];
+        }
+        old =null;
+        int j =i;
+        for( i=0;i<other.lengthArray();i++){
+            items[j++]=other.items[i];
+            length++;
+        }
+    }
 }
