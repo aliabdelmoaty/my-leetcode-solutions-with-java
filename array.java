@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * array
  */
@@ -17,18 +15,19 @@ public class array {
     public void fill() {
         int no_of_item;
         System.out.println("how many items you want to fill?");
-        Scanner sc = new Scanner(System.in);
+        java.util.Scanner sc = new java.util.Scanner(System.in);
         no_of_item = sc.nextInt();
         if (no_of_item > size) {
             System.out.println("You can't exceed the size of array");
             return;
         } else {
             for (int i = 0; i < no_of_item; i++) {
-                System.out.println("Enter the item" + i + 1 + ":");
+                System.out.println("Enter the item" + (i + 1) + ":");
                 items[i] = sc.nextInt();
                 length++;
             }
         }
+        
 
     }
 
@@ -67,27 +66,44 @@ public class array {
         }
     }
 
-    void insert(int index,int newItem){
-        if(index>=0&&length<size){
-            for(int i =length;i>index;i--){
-                items[i]=items[i-1];
+    void insert(int index, int newItem) {
+        if (index >= 0 && length < size) {
+            for (int i = length; i > index; i--) {
+                items[i] = items[i - 1];
 
             }
-            items[index]=newItem;
+            items[index] = newItem;
             length++;
-        }else{
+        } else {
             System.out.println("Index is not valid");
         }
     }
-    void delete(int index){
-        if(index>=0&&index<length){
-            for(int i =index;i<length;i++){
-                items[i]=items[i+1];
+
+    void delete(int index) {
+        if (index >= 0 && index < length) {
+            for (int i = index; i < length; i++) {
+                items[i] = items[i + 1];
                 length--;
             }
-        }else{
+        } else {
             System.out.println("Index is not valid");
         }
+    }
+
+    void enlarge(int newSize) {
+        if (newSize <= size) {
+            System.out.println("New size should be greater than the current size");
+            return;
+        } else {
+            size = newSize;
+            int[] old = items;
+            items = new int[size];
+            for (int i = 0; i < length; i++) {
+                items[i] = old[i];
+            }
+            old=null;
+        }
+
     }
 
 }

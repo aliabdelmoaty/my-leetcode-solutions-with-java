@@ -47,5 +47,15 @@ public class main_project {
         arr.delete(index);
         System.out.println("---------------------------------------------------");
         arr.display();
+        System.out.println("---------------------------------------------------");
+        System.out.println("Enter the size where you want to change the array");
+        size = sc.nextInt();
+        arr.enlarge(size);
+        System.out.println("---------------------------------------------------");
+        System.out.println("Length of array is: " + arr.lengthArray());
+        System.out.println("---------------------------------------------------");
+        System.out.println("Size of array is: " + arr.sizeArray());
+        System.out.println("---------------------------------------------------");
+        arr.display();
     }
 }
