@@ -1,7 +1,6 @@
 
 class LinkedList {
   public Node head;
-  private int length;
 
   public LinkedList() {
     head = null;
@@ -38,13 +37,13 @@ class LinkedList {
   }
 
   int count() {
-    length = 0;
+    int count = 0;
     Node temp = head;
     while (temp != null) {
       temp = temp.next;
-      length++;
+      count++;
     }
-    return length;
+    return count;
   }
 
   boolean isFound(int key) {
