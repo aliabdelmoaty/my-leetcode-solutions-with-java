@@ -15,15 +15,15 @@ class LinkedList {
     }
   }
 
-  void firstInsert(int newVal,int numItems) {
+  void firstInsert(int newVal, int numItems) {
     Node newNode = new Node();
     newNode.data = newVal;
     if (isEmpty()) {
       newNode.next = null;
       head = newNode;
     } else {
-        newNode.next = head;
-        head = newNode;
+      newNode.next = head;
+      head = newNode;
 
     }
   }
@@ -57,6 +57,43 @@ class LinkedList {
       temp = temp.next;
     }
     return found;
+  }
+
+  void insertBefore(int item, int newVal) {
+    if (isEmpty()) {
+      firstInsert(newVal, 1);
+    }
+    if (isFound(item)) {
+      Node newNode = new Node();
+      newNode.data = newVal;
+      Node temp = head;
+      while (temp != null && temp.next.data != item) {
+        temp = temp.next;
+
+      }
+      newNode.next = temp.next;
+      temp.next = newNode;
+    } else {
+      System.out.println("item not found");
+    }
+
+  }
+
+  void append(int newVal) {
+    if (isEmpty()) {
+      firstInsert(newVal, 1);
+    } else {
+      Node temp = head;
+      while (temp.next != null) {
+        temp = temp.next;
+      }
+      Node newNode = new Node();
+      newNode.data = newVal;
+      temp.next = newNode;
+      newNode.next = null;
+
+    }
+
   }
 }
 
