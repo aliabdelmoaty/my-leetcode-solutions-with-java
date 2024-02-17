@@ -42,6 +42,12 @@ public class main_project {
         System.out.println("--------------------------------------------------");
         linkedList.display();
         System.out.println("--------------------------------------------------");
+        System.out.println("enter item to delete:");
+        int delete= sc.nextInt();
+        linkedList.delete(delete);
+        System.out.println("--------------------------------------------------");
+        linkedList.display();
+        System.out.println("--------------------------------------------------");
 
     }
 }

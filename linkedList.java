@@ -95,6 +95,29 @@ class LinkedList {
     }
 
   }
+
+  void delete(int deleteVal) {
+
+    if (isEmpty()) {
+      System.out.println("List is empty");
+    }
+    Node delete;
+    if (head.data == deleteVal) {
+      delete = head;
+      head = head.next;
+      delete = null;
+    } else {
+      Node prev = null;
+      delete = head;
+      while (delete.data != deleteVal) {
+        prev =delete;
+        delete =delete.next;
+      }
+      prev.next =delete.next;
+      delete =null;
+    }
+
+  }
 }
 
 class Node {

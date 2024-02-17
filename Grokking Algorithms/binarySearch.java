@@ -1,8 +1,6 @@
 
-public class binary_search {
-    private static Integer binarySearch(
-        int []list, int item
-    ){
+public class binarySearch {
+    public static Integer binary_search(int[] list, int item){
         int low =0;
         int hight = list.length -1;
         while (low <=hight){
@@ -21,3 +19,6 @@ public class binary_search {
     }
     
 }
+
+
+    
