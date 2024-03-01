@@ -2,52 +2,28 @@ import java.util.Scanner;
 
 public class main_project {
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        if (linkedList.isEmpty()) {
-            System.out.println("The list is empty");
-        } else {
-            System.out.println("The list is not empty");
-            System.out.println(linkedList.count());
+        int item;
+        stack st = new stack();
+        for (int i = 0; i < 5; i++) {
+            System.out.print("enter item: ");
+            Scanner sc = new Scanner(System.in);
+            item = sc.nextInt();
+            st.push(item);
+            System.out.println("-------------------------------------------");
+            st.display();
+            System.out.println("-------------------------------------------");
         }
-        System.out.println("--------------------------------------------------");
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter number insert to list");
-        int num = sc.nextInt();
-        System.out.println("Enter item to insert list");
-        int i = 0;
-        while (num > i) {
-            int insert = sc.nextInt();
-            linkedList.firstInsert(insert, num);
-            i++;
-        }
-        System.out.println("--------------------------------------------------");
-        linkedList.display();
-        System.out.println("--------------------------------------------------");
-        System.out.println("count linked list: " + linkedList.count());
-        System.out.println("--------------------------------------------------");
-        System.out.println("enter item to search");
-        int search = sc.nextInt();
-        linkedList.isFound(search);
-        if (linkedList.isFound(search) == true) {
-            System.out.println("we found item");
-        } else {
-            System.out.println("we can't found item");
-        }
-        System.out.println("--------------------------------------------------");
-        System.out.println("enter new value and item");
-        int newVal = sc.nextInt();
-        // int item = sc.nextInt();
-        // linkedList.insertBefore(item, newVal);
-        linkedList.append(newVal);
-        System.out.println("--------------------------------------------------");
-        linkedList.display();
-        System.out.println("--------------------------------------------------");
-        System.out.println("enter item to delete:");
-        int delete= sc.nextInt();
-        linkedList.delete(delete);
-        System.out.println("--------------------------------------------------");
-        linkedList.display();
-        System.out.println("--------------------------------------------------");
+        System.out.println(st.pop());
+        System.out.println("-------------------------------------------");
+        st.display();
+        System.out.println("-------------------------------------------");
+        System.out.println(st.isFound(5));
+        System.out.println("-------------------------------------------");
+        System.out.println(st.count());
+        System.out.println("-------------------------------------------");
+
+        System.out.println(st.peek());
+        System.out.println("-------------------------------------------");
 
     }
 }
