@@ -41,13 +41,32 @@ public class Palindrome {
          * }
          */
 
-      
-        StringBuffer covertString = new StringBuffer().append(x);
-          String item = covertString.toString();
-          String reverse = covertString.reverse().toString();
-          if (item.equals(reverse)) {
-          return true;
-          }
+        /*
+         * Follow up: Could you solve it without converting the integer to a string? yes
+         * 
+         * 2 way to solve
+         * int reverse = 0, y = x > 0 ? x : -(x);
+         * while (y != 0) {
+         * int remainder = y % 10;
+         * reverse = reverse * 10 + remainder;
+         * 
+         * y = y / 10;
+         * }
+         * if (reverse == x) {
+         * return true;
+         * }
+         * 
+         */
+        int reverse = 0, y = x > 0 ? x : -(x);
+        while (y != 0) {
+            int remainder = y % 10;
+            reverse = reverse * 10 + remainder;
+
+            y = y / 10;
+        }
+        if (reverse == x) {
+            return true;
+        }
         return false;
     }
 
