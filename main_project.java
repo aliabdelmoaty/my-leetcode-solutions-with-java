@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class main_project {
     public static void main(String[] args) {
         int item;
-        stack st = new stack();
+        sack st = new sack();
         for (int i = 0; i < 5; i++) {
             System.out.print("enter item: ");
             Scanner sc = new Scanner(System.in);

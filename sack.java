@@ -1,9 +1,8 @@
-import java.util.Scanner;
 
-public class stack {
+public class sack {
     Node top;
     
-    public stack() {
+    public sack() {
         top = null;
     }
     public void push(int item){
