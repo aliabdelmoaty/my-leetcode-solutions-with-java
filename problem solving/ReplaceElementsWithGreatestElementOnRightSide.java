@@ -20,9 +20,22 @@ public class ReplaceElementsWithGreatestElementOnRightSide {
         return arr;
     }
 
+    public int[] replaceElements2(int[] arr) {
+        int max = -1;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int a = arr[i];
+            arr[i] = max;
+            max = Math.max(max, a);
+        }
+        arr[arr.length - 1] = -1;
+        System.out.println(Arrays.toString(arr));
+
+        return arr;
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 400 };
+        int[] arr = { 17, 18, 5, 4, 6, 1 };
         ReplaceElementsWithGreatestElementOnRightSide rSide = new ReplaceElementsWithGreatestElementOnRightSide();
-        rSide.replaceElements(arr);
+        rSide.replaceElements2(arr);
     }
 }
