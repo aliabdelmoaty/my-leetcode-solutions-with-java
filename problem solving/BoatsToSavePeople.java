@@ -9,7 +9,6 @@ public class BoatsToSavePeople {
                 int p = 0;
                 for (int j = people.length - 1; j >= i; j--) {
                     if ((people[i] + people[j]) <= limit) {
-
                         p++;
                         people[j] = limit + 1;
                         break;
