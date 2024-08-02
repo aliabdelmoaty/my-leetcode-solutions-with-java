@@ -42,7 +42,7 @@
 
 import java.math.BigInteger;
 
-class Solution {
+class PlusOneSolution {
     public int[] plusOne(int[] digits) {
         String result = "";
 
